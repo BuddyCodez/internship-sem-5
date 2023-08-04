@@ -1,19 +1,22 @@
 import React from 'react'
 
-const Rintrest = () => {
+const Rintrest = ({ languages }) => {
   return (
-      <>
-          <div class="interests">
-      <h3><i class="fas fa-star"></i>Interests</h3>
-      <div class="interests-items">
-        <div class="art"><i class="fas fa-palette"></i><span>Art</span></div>
-        <div class="art"><i class="fas fa-book"></i><span>Books</span></div>
-        <div class="movies"><i class="fas fa-film"></i><span>Movies</span></div>
-        <div class="music"><i class="fas fa-headphones"></i><span>Music</span></div>
-        <div class="games"><i class="fas fa-gamepad"></i><span>Games</span></div>
+    <>
+      <div class="interests">
+        <h3><i class="fa-solid fa-language"></i>Languages</h3>
+        <div class="flex langs">
+          {languages.map(l => (
+            <div class="item">
+              <span class='flex justify-center items-center gap-2'>
+                <i class="fa-solid fa-circle-dot text-warning"></i>
+                {l}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-      </>
+    </>
   )
 }
 

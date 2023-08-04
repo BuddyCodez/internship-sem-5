@@ -32,6 +32,76 @@
     <script src="https://kit.fontawesome.com/79101233a3.js" crossorigin="anonymous"></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      (function () {
+          document.querySelector(".skills-prog li")
+            .find(".skills-bar")
+            .each(function (i) {
+              document.querySelector(this)
+                .find(".bar")
+                .delay(i * 150)
+                .animate(
+                  {
+                    width:
+                      document.querySelector(this)
+                        .parents()
+                        .attr("data-percent") + "%"
+                  },
+                  1000,
+                  "linear",
+                  function () {
+                    return document.querySelector(this).css({
+                      "transition-duration": ".5s"
+                    });
+                  }
+                );
+            });
+
+          document.querySelector(".skills-soft li")
+            .find("svg")
+            .each(function (i) {
+              var c, cbar, circle, percent, r;
+              circle = document.querySelector(this).children(".cbar");
+              r = circle.attr("r");
+              c = Math.PI * (r * 2);
+              percent = document.querySelector(this)
+                .parent()
+                .data("percent");
+              cbar = (100 - percent) / 100 * c;
+              circle.css({
+                "stroke-dashoffset": c,
+                "stroke-dasharray": c
+              });
+              circle.delay(i * 150).animate(
+                {
+                  strokeDashoffset: cbar
+                },
+                1000,
+                "linear",
+                function () {
+                  return circle.css({
+                    "transition-duration": ".3s"
+                  });
+                }
+              );
+              document.querySelector(this)
+                .siblings("small")
+                .prop("Counter", 0)
+                .delay(i * 150)
+                .animate(
+                  {
+                    Counter: percent
+                  },
+                  {
+                    duration: 1000,
+                    step: function (now) {
+                      return document.querySelector(this).text(Math.ceil(now) + "%");
+                    }
+                  }
+                );
+            });
+        }.call(this));
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

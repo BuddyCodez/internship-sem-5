@@ -512,3 +512,15 @@ h3 {
     height: 80px;
     border-radius: 50%;
 }
+.flex {
+    display: flex;
+}
+.langs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    gap: 20px;
+    height: 150px;
+    padding: 25px;
+}
