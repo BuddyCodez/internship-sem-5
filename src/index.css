@@ -7,7 +7,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fontC {
+   font-family: -apple-system, BlinkMacSystemFont,'Oxygen',
+    sans-serif;
+}
+.Img {
+transition: all 0.3s ease-in-out;
+cursor: pointer;
+
+}
+.Img img {
+  border-radius: 7px;
+}
+.Img:hover {
+  opacity: 0.3;
+  transform: scale(0.98);
+}
+.navbar li a {
+  border-radius: 7px;
+}
+.btn-info {
+  border-radius: 7px;
+  background: hsl(var(--in));
+  color: white;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  min-height: 100vh;
+  max-height: auto;
+}
+.spacer {
+  height: 100%;
+}
+.card-bottom {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px;
 }
